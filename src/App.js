@@ -12,6 +12,7 @@ const App = () => {
   const prevTodoList = useSelector(state => state.prevTodoList);
   const dispatch = useDispatch();
 
+  //Undo esetén a legutóbbi törlés előtti array-t töltjük vissza és kiürítjük az törlés előtti állapotot tároló prevTodoList arrayt -> redux
   const handleUndo = () => {
     dispatch(addTodoAction(prevTodoList));
     dispatch(setPrevTodoAction([]));
@@ -25,6 +26,7 @@ const App = () => {
         <List/>
       </Scroll>
       {
+        //Akkor jelenítse meg az Undo-t, ha töröltünk elemet -> ha nincs [0] elem, undefined lesz ami falsy
         prevTodoList[0] ? 
           <div className='my-4'><button  onClick={() => handleUndo()} style={{backgroundColor: 'rgb(0,80,255)', color: 'white'}} className="btn" type="button">Undo&nbsp;&nbsp;
           <img alt='undo' width='20px' heigth='20px' src={undoIcon}/></button></div> : null

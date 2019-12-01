@@ -7,6 +7,7 @@ const List = () => {
 
     const todoList = useSelector(state => state.todoList);
 
+    //reszponzivítás, végigmapelünk a todo array-en
     return (
         <div>
         <MediaQuery minWidth={855}>
