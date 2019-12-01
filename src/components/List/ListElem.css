@@ -1,0 +1,50 @@
+.checkbox {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+@keyframes swing
+{
+    15%
+    {
+        transform: translateX(-1px);
+    }
+    30%
+    {
+        transform: translateX(2px);
+    } 
+    50%
+    {
+        transform: translateX(-2px);
+    }
+    65%
+    {
+        transform: translateX(1px);
+    }
+}
+
+.container{
+    background-color: rgb(0,80,255);
+    color: white;
+    cursor: pointer;
+}
+
+.container:hover{
+    background-color: rgb(0, 60, 255);
+    animation: swing 1s ease;
+}
+
+.date{
+    font-size: 10px;
+}
+
+#listelem {
+    transition: 0.2s ease-in-out;
+}
+
+#listelem:hover {
+    width: 22px;
+    height: 32px;
+}
